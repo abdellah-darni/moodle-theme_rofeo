@@ -1,0 +1,19 @@
+// ROFEO Academy theme
+// Appended after Moove's compiled SCSS by theme_rofeo_get_main_scss_content().
+// Anything here wins over Moove, because later rules override earlier ones.
+
+// ---------------------------------------------------------------------------
+// 1. Moove overrides
+// ---------------------------------------------------------------------------
+
+#page-footer .madeby {
+    display: none;
+}
+
+// ---------------------------------------------------------------------------
+// 2. Front page  (filled in at Stage 2)
+// ---------------------------------------------------------------------------
+
+// .rofeo-hero { }
+// .rofeo-featured { }
+// .rofeo-course-card { }
