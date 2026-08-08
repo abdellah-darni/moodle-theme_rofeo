@@ -1,19 +1,29 @@
-// ROFEO Academy theme
-// Appended after Moove's compiled SCSS by theme_rofeo_get_main_scss_content().
-// Anything here wins over Moove, because later rules override earlier ones.
+#page-footer .madeby { display: none; }
 
-// ---------------------------------------------------------------------------
-// 1. Moove overrides
-// ---------------------------------------------------------------------------
+.rofeo-hero {
+    padding: 5rem 0;
+    background-color: $gray-100;
 
-#page-footer .madeby {
-    display: none;
+    &__title {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+    }
+
+    &__subtitle {
+        font-size: 1.125rem;
+        line-height: 1.6;
+        color: $gray-700;
+        max-width: 34rem;
+        margin: 1.5rem 0 2.25rem;
+    }
+
+    &__media {
+        aspect-ratio: 4 / 3;
+        border-radius: 1rem;
+        background: url('[[pix:theme_rofeo|hero]]') center / cover no-repeat;
+    }
 }
 
-// ---------------------------------------------------------------------------
-// 2. Front page  (filled in at Stage 2)
-// ---------------------------------------------------------------------------
-
-// .rofeo-hero { }
-// .rofeo-featured { }
-// .rofeo-course-card { }
+#catalogue { scroll-margin-top: 5rem; }
