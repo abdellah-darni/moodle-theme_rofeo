@@ -231,28 +231,9 @@
     display: none;
 }
 
-pagelayout-frontpage {
-
-    #page-wrapper #page #page-content {
-        flex: none !important;
-        min-height: 0 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        background: transparent !important;
-    }
-
-    #region-main, 
-    #region-main-box {
-        background: transparent !important;
-        border: none !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        box-shadow: none !important;
-    }
-
-    #region-main > [role="main"] {
-        display: none !important;
-    }
+.rofeo-frontpage-main #page-content.main-inner {
+    background: transparent;
+    padding: 0;
 }
 
 #catalogue { scroll-margin-top: 5rem; }
