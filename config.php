@@ -12,7 +12,7 @@ $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 $THEME->requiredblocks = '';
 $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
 $THEME->usefallback = false;
-$THEME->iconsystem = \theme_moove\util\icon_system::class;
+$THEME->iconsystem = \core\output\icon_system::FONTAWESOME;
 
 $THEME->scss = function($theme) {
     return theme_rofeo_get_main_scss_content($theme);
@@ -20,7 +20,6 @@ $THEME->scss = function($theme) {
 $THEME->prescsscallback  = 'theme_rofeo_get_pre_scss';
 $THEME->extrascsscallback = 'theme_rofeo_get_extra_scss';
 
-// Copy the entire $THEME->layouts array verbatim from theme/moove/config.php.
 $THEME->layouts = [
     'base' => [
         'file' => 'drawers.php',
