@@ -26,3 +26,25 @@ function theme_rofeo_pluginfile($course, $cm, $context, $filearea, $args, $force
 
     send_file_not_found();
 }
+
+function theme_rofeo_frontpage_defaults(): array {
+    return [
+        'herotitle'      => 'La robotique, pour tous.',
+        'herosubtitle'   => 'Des ateliers pratiques pour apprendre à construire et programmer, dès 8 ans.',
+        'heroctalabel'   => 'Voir les formations',
+        'heroctaurl'     => '#catalogue',
+        'cataloguetitle' => 'Catalogue des formations',
+        'coursectalabel' => 'Demander l\'accès',
+    ];
+}
+
+function theme_rofeo_setting(string $key) {
+    $value = get_config('theme_rofeo', $key);
+
+    if ($value === false || $value === null) {
+        $defaults = theme_rofeo_frontpage_defaults();
+        return $defaults[$key] ?? '';
+    }
+
+    return $value;
+}

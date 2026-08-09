@@ -128,14 +128,12 @@ if (!isloggedin()) {
 }
 
 foreach (['herotitle', 'heroctalabel', 'heroctaurl'] as $key) {
-    $templatecontext[$key] = get_config('theme_rofeo', $key);
+    $templatecontext[$key] = theme_rofeo_setting($key);
 }
 
-$templatecontext['herosubtitle'] = format_text(
-    get_config('theme_rofeo', 'herosubtitle'),
-    FORMAT_HTML,
-    ['noclean' => false]
-);
+$templatecontext['herosubtitle'] = format_text(theme_rofeo_setting('herosubtitle'), FORMAT_HTML);
+$templatecontext['cataloguetitle'] = theme_rofeo_setting('cataloguetitle');
+$templatecontext['coursectalabel'] = theme_rofeo_setting('coursectalabel');
 
 $heroimage = $PAGE->theme->setting_file_url('heroimage', 'heroimage');
 if (empty($heroimage)) {
@@ -145,7 +143,5 @@ $templatecontext['heroimageurl'] = $heroimage;
 
 $catalogue = new \theme_rofeo\output\catalogue();
 $templatecontext = array_merge($templatecontext, $catalogue->export_for_template($OUTPUT));
-$templatecontext['cataloguetitle']  = get_config('theme_rofeo', 'cataloguetitle');
-$templatecontext['coursectalabel']  = get_config('theme_rofeo', 'coursectalabel');
 
 echo $OUTPUT->render_from_template($template, $templatecontext);
