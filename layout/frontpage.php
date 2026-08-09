@@ -127,9 +127,15 @@ if (!isloggedin()) {
     $template = 'theme_moove/frontpage';
 }
 
-foreach (['herotitle', 'herosubtitle', 'heroctalabel', 'heroctaurl'] as $key) {
+foreach (['herotitle', 'heroctalabel', 'heroctaurl'] as $key) {
     $templatecontext[$key] = get_config('theme_rofeo', $key);
 }
+
+$templatecontext['herosubtitle'] = format_text(
+    get_config('theme_rofeo', 'herosubtitle'),
+    FORMAT_HTML,
+    ['noclean' => false]
+);
 
 $heroimage = $PAGE->theme->setting_file_url('heroimage', 'heroimage');
 if (empty($heroimage)) {
