@@ -9,6 +9,8 @@ if ($ADMIN->fulltree) {
         ['herosubtitle', 'Des ateliers pratiques pour apprendre à construire et programmer, dès 8 ans.', 'textarea'],
         ['heroctalabel', 'Voir les formations', 'text'],
         ['heroctaurl', '#catalogue', 'text'],
+        ['cataloguetitle', 'Catalogue des formations', 'text'],
+        ['coursectalabel', 'Voir la formation', 'text'],
     ];
 
     foreach ($fields as [$key, $default, $type]) {

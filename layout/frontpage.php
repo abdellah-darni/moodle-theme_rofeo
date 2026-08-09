@@ -143,4 +143,9 @@ if (empty($heroimage)) {
 }
 $templatecontext['heroimageurl'] = $heroimage;
 
+$catalogue = new \theme_rofeo\output\catalogue();
+$templatecontext = array_merge($templatecontext, $catalogue->export_for_template($OUTPUT));
+$templatecontext['cataloguetitle']  = get_config('theme_rofeo', 'cataloguetitle');
+$templatecontext['coursectalabel']  = get_config('theme_rofeo', 'coursectalabel');
+
 echo $OUTPUT->render_from_template($template, $templatecontext);
