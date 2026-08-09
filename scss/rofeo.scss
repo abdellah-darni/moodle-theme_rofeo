@@ -231,18 +231,27 @@
     display: none;
 }
 
-.pagelayout-frontpage {
-    
-    #region-main,
-    #region-main-box {
-        background-color: transparent;
-        border: none;
-        padding-bottom: 0;
-        box-shadow: none;
+pagelayout-frontpage {
+
+    #page-wrapper #page #page-content {
+        flex: none !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
     }
 
-    #region-main [role="main"] {
-        display: none; 
+    #region-main, 
+    #region-main-box {
+        background: transparent !important;
+        border: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+    }
+
+    #region-main > [role="main"] {
+        display: none !important;
     }
 }
 
