@@ -1,5 +1,3 @@
-#page-footer .madeby { display: none; }
-
 .rofeo-hero {
     position: relative;
     display: flex;
@@ -246,6 +244,39 @@
 
     #region-main [role="main"] > br {
         display: none;
+    }
+}
+
+.rofeo-footer {
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        padding: 2rem 0;
+    }
+
+    &__name { font-weight: 600; margin-bottom: 0.25rem; }
+
+    &__links,
+    &__social {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__social a { font-size: 1.25rem; }
+
+    &__meta {
+        font-size: 0.875rem;
+        opacity: 0.8;
+        text-align: right;
+
+        @include media-breakpoint-down(md) { text-align: left; }
     }
 }
 

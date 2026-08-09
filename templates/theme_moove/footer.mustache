@@ -1,0 +1,80 @@
+{{!
+    ROFEO slim footer.
+    Forked from theme_moove/templates/footer.mustache (branch main, August 2026).
+}}
+
+<footer id="page-footer" class="footer-popover rofeo-footer">
+    <div class="moove-container-fluid rofeo-footer__inner">
+
+        <div class="rofeo-footer__brand">
+            <div class="rofeo-footer__name">{{ sitename }}</div>
+
+            {{#hasfootercontact}}
+                <ul class="rofeo-footer__links">
+                    {{#mail}}<li><a href="mailto:{{{mail}}}">{{{mail}}}</a></li>{{/mail}}
+                    {{#mobile}}<li><a href="tel:{{{mobile}}}">{{{mobile}}}</a></li>{{/mobile}}
+                    {{#website}}<li><a href="{{{website}}}" target="_blank" rel="noopener">{{#str}}footerwebsite, theme_rofeo{{/str}}</a></li>{{/website}}
+                </ul>
+            {{/hasfootercontact}}
+        </div>
+
+        {{#hasfootersocial}}
+            <ul class="rofeo-footer__social">
+                {{#facebook}}<li><a href="{{{facebook}}}" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook"></i></a></li>{{/facebook}}
+                {{#instagram}}<li><a href="{{{instagram}}}" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a></li>{{/instagram}}
+                {{#youtube}}<li><a href="{{{youtube}}}" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa fa-youtube"></i></a></li>{{/youtube}}
+                {{#linkedin}}<li><a href="{{{linkedin}}}" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a></li>{{/linkedin}}
+                {{#whatsapp}}<li><a href="https://api.whatsapp.com/send?phone={{{whatsapp}}}" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa fa-whatsapp"></i></a></li>{{/whatsapp}}
+                {{#tiktok}}<li><a href="{{{tiktok}}}" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a></li>{{/tiktok}}
+            </ul>
+        {{/hasfootersocial}}
+
+        <div class="rofeo-footer__meta">
+            {{# output.supportemail }}
+                <div class="supportemail">{{{ output.supportemail }}}</div>
+            {{/ output.supportemail }}
+            {{{ output.standard_footer_html }}}
+            <div class="tool_usertours-resettourcontainer"></div>
+        </div>
+
+    </div>
+
+    <div class="footer-content-debugging footer-dark bg-dark text-light">
+        <div class="moove-container-fluid footer-dark-inner">
+            {{{ output.debug_footer_html }}}
+        </div>
+    </div>
+
+    <div data-region="footer-container-popover">
+        {{#output.has_communication_links}}
+            <button onclick="window.open('{{output.communication_url}}', '_blank', 'noreferrer')" class="btn btn-icon rounded-circle bg-primary text-white btn-footer-communication" aria-label="{{#str}}communicationroomlink, course{{/str}}">
+                {{#pix}}t/messages-o, core{{/pix}}
+            </button>
+        {{/output.has_communication_links}}
+        <button class="btn btn-icon rounded-circle bg-secondary btn-footer-popover" data-action="footer-popover" aria-label="{{#str}}showfooter, theme_boost{{/str}}">
+            {{#pix}}e/question, core{{/pix}}
+        </button>
+    </div>
+    <div class="footer-content-popover container" data-region="footer-content-popover">
+        {{# output.has_popover_links }}
+            <div class="footer-section p-3 border-bottom">
+                {{# output.page_doc_link }}<div>{{{ output.page_doc_link }}}</div>{{/ output.page_doc_link }}
+                {{# output.services_support_link }}<div>{{{ output.services_support_link }}}</div>{{/ output.services_support_link }}
+            </div>
+        {{/ output.has_popover_links }}
+        <div class="footer-section p-3">
+            <div>{{#str}}poweredbymoodle, core{{/str}}</div>
+            {{#output.moodle_release}}
+                <div>{{#str}}version, core{{/str}} {{{ output.moodle_release }}}</div>
+            {{/output.moodle_release}}
+        </div>
+    </div>
+</footer>
+
+{{{ output.standard_end_of_body_html }}}
+
+{{#js}}
+    require(['theme_boost/footer-popover'], function(FooterPopover) {
+        FooterPopover.init();
+    });
+{{/js}}
