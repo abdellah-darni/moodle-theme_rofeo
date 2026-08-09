@@ -5,6 +5,8 @@ require_once(__DIR__ . '/lib.php');
 
 $THEME->name = 'rofeo';
 $THEME->sheets = [];
+$THEME->editor_sheets = [];
+$THEME->editor_scss = ['editor'];
 $THEME->parents = ['moove', 'boost'];
 $THEME->enable_dock = false;
 $THEME->yuicssmodules = [];
@@ -13,6 +15,9 @@ $THEME->requiredblocks = '';
 $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
 $THEME->usefallback = false;
 $THEME->iconsystem = \core\output\icon_system::FONTAWESOME;
+$THEME->haseditswitch = true;
+$THEME->usescourseindex = true;
+
 
 $THEME->scss = function($theme) {
     return theme_rofeo_get_main_scss_content($theme);
@@ -42,4 +47,8 @@ $THEME->layouts = [
         'regions' => [],
         'options' => ['langmenu' => true],
     ],
+];
+
+$THEME->activityheaderconfig = [
+    'notitle' => true,
 ];
