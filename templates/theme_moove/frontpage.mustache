@@ -47,20 +47,18 @@
     <div id="page" data-region="mainpage" data-usertour="scroller" class="drawers drag-container bg-white">
 
         <section class="rofeo-hero">
-            <div class="container">
-                <div class="row align-items-center g-5">
-                    <div class="col-lg-6">
-                        <h1 class="rofeo-hero__title">{{ herotitle }}</h1>
-                        <div class="rofeo-hero__subtitle">{{{ herosubtitle }}}</div>
-                        {{#heroctalabel}}
-                            <a href="{{ heroctaurl }}" class="btn btn-primary btn-lg rofeo-hero__cta">
-                                {{ heroctalabel }}
-                            </a>
-                        {{/heroctalabel}}
-                    </div>
-                    <div class="col-lg-6 d-none d-lg-block">
-                            <img src="{{ heroimageurl }}" alt="" class="rofeo-hero__img">
-                    </div>
+            <img src="{{ heroimageurl }}" alt="" aria-hidden="true"
+                 class="rofeo-hero__bg" fetchpriority="high">
+            <div class="rofeo-hero__scrim"></div>
+            <div class="rofeo-hero__inner">
+                <div class="rofeo-hero__content">
+                    <h1 class="rofeo-hero__title">{{ herotitle }}</h1>
+                    <div class="rofeo-hero__subtitle">{{{ herosubtitle }}}</div>
+                    {{#heroctalabel}}
+                        <a href="{{ heroctaurl }}" class="btn btn-lg rofeo-hero__cta">
+                            {{ heroctalabel }}
+                        </a>
+                    {{/heroctalabel}}
                 </div>
             </div>
         </section>
