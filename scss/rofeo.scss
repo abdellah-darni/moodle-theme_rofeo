@@ -6,7 +6,7 @@
     align-items: center;
     min-height: clamp(26rem, 70vh, 34rem);
     overflow: hidden;
-    margin-inline: calc(-1 * var(--rofeo-page-pad, 0.93rem));
+    margin-inline: calc(-1 * var(--rofeo-page-pad, 0.95rem));
 
     &__bg {
         position: absolute;
