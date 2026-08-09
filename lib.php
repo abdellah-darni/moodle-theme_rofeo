@@ -17,3 +17,12 @@ function theme_rofeo_get_pre_scss($theme) {
 function theme_rofeo_get_extra_scss($theme) {
     return theme_moove_get_extra_scss(theme_config::load('moove'));
 }
+
+function theme_rofeo_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = []) {
+    if ($context->contextlevel == CONTEXT_SYSTEM && $filearea === 'heroimage') {
+        $theme = theme_config::load('rofeo');
+        return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
+    }
+
+    send_file_not_found();
+}

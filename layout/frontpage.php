@@ -131,4 +131,10 @@ foreach (['herotitle', 'herosubtitle', 'heroctalabel', 'heroctaurl'] as $key) {
     $templatecontext[$key] = get_config('theme_rofeo', $key);
 }
 
+$heroimage = $PAGE->theme->setting_file_url('heroimage', 'heroimage');
+if (empty($heroimage)) {
+    $heroimage = $OUTPUT->image_url('hero', 'theme_rofeo')->out(false);
+}
+$templatecontext['heroimageurl'] = $heroimage;
+
 echo $OUTPUT->render_from_template($template, $templatecontext);

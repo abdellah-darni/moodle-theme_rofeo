@@ -14,3 +14,5 @@ $string['heroctalabel'] = 'Hero button label';
 $string['heroctalabel_desc'] = 'Text on the main call-to-action button.';
 $string['heroctaurl'] = 'Hero button link';
 $string['heroctaurl_desc'] = 'Where the button goes. Use #catalogue to scroll to the course list.';
+$string['heroimage'] = 'Hero image';
+$string['heroimage_desc'] = 'Image shown beside the headline. Landscape, at least 1200px wide. Leave empty to use the theme\'s default image.';

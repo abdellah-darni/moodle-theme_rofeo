@@ -19,10 +19,11 @@
         margin: 1.5rem 0 2.25rem;
     }
 
-    &__media {
+    &__img {
+        width: 100%;
         aspect-ratio: 4 / 3;
+        object-fit: cover;
         border-radius: 1rem;
-        background: url('[[pix:theme_rofeo|hero]]') center / cover no-repeat;
     }
 }
 

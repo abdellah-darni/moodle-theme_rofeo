@@ -21,4 +21,15 @@ if ($ADMIN->fulltree) {
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
     }
+
+    $setting = new admin_setting_configstoredfile(
+        'theme_rofeo/heroimage',
+        get_string('heroimage', 'theme_rofeo'),
+        get_string('heroimage_desc', 'theme_rofeo'),
+        'heroimage',
+        0,
+        ['maxfiles' => 1, 'accepted_types' => ['.jpg', '.jpeg', '.png', '.webp']]
+    );
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($setting);
 }
