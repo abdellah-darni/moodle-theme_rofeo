@@ -231,9 +231,22 @@
     display: none;
 }
 
-.rofeo-frontpage-main #page-content.main-inner {
-    background: transparent;
-    padding: 0;
+.pagelayout-frontpage {
+
+    #page-content.main-inner {
+        background: transparent;
+        padding: 0;
+    }
+
+    #region-main {
+        background: transparent;
+        border: 0;
+        padding: 0;
+    }
+
+    #region-main [role="main"] > br {
+        display: none;
+    }
 }
 
 #catalogue { scroll-margin-top: 5rem; }
