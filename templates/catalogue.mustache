@@ -1,11 +1,11 @@
 {{#hascategories}}
 <section class="rofeo-catalogue" id="catalogue">
     <div class="rofeo-catalogue__inner">
-        <h2 class="rofeo-catalogue__heading">{{ cataloguetitle }}</h2>
+        <h2 class="rofeo-catalogue__heading">{{{ cataloguetitle }}}</h2>
 
         {{#categories}}
             <div class="rofeo-catalogue__group">
-                <h3 class="rofeo-catalogue__category">{{ name }}</h3>
+                <h3 class="rofeo-catalogue__category">{{{ name }}}</h3>
                 <div class="rofeo-grid">
                     {{#courses}}
                         <article class="rofeo-card">
@@ -16,13 +16,13 @@
                                 {{^hasimage}}
                                     <div class="rofeo-card__img rofeo-card__img--empty"></div>
                                 {{/hasimage}}
-                                <h4 class="rofeo-card__title">{{ fullname }}</h4>
+                                <h4 class="rofeo-card__title">{{{ fullname }}}</h4>
                                 {{#summary}}
-                                    <p class="rofeo-card__summary">{{ summary }}</p>
+                                    <p class="rofeo-card__summary">{{{ summary }}}</p>
                                 {{/summary}}
                             </a>
-                            <a href="{{ enrolurl }}" class="btn btn-primary btn-sm rofeo-card__cta">
-                                {{ coursectalabel }}
+                            <a href="{{ infourl  }}" class="btn btn-primary btn-sm rofeo-card__cta">
+                                {{{ coursectalabel }}}
                             </a>
                         </article>
                     {{/courses}}

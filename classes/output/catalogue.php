@@ -56,12 +56,10 @@ class catalogue implements renderable, templatable {
         $summary = '';
         if ($course->has_summary()) {
             $summary = shorten_text(
-                strip_tags(
-                    format_text(
-                        $course->summary,
-                        $course->summaryformat,
-                        ['context' => context_course::instance($course->id)]
-                    )
+                html_to_text(
+                    format_text($course->summary, $course->summaryformat,
+                        ['context' => context_course::instance($course->id)]),
+                    0, false
                 ),
                 140
             );
