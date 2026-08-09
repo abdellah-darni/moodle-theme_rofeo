@@ -15,39 +15,24 @@
     along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 }}
 {{!
-    @template theme_moove/drawers
+    @template theme_moove/frontpage
 
-    Boost drawer template.
+    ROFEO override of moove's anonymous front page.
+    Forked from theme_moove (branch main, August 2026). Re-check against
+    upstream after any moove update.
+
+    Differences from upstream:
+      - slider, marketing boxes and numbers sections removed
+      - hero section added, driven by theme_rofeo settings
+      - #catalogue anchor added ahead of the course list
+      - carousel JS removed (no slider markup left to initialise)
 
     Context variables required for this template:
-    * sitename - The name of the site
     * output - The core renderer for the page
     * bodyattributes - attributes for the body tag as a string of html attributes
-    * sidepreblocks - HTML for the blocks
-    * hasblocks - true if there are blocks on this page
-    * courseindexopen - true if the nav drawer should be open on page load
-    * regionmainsettingsmenu - HTML for the region main settings menu
-    * hasregionmainsettingsmenu - There is a region main settings menu on this page.
-
-    Example context (json):
-    {
-        "sitename": "Moodle",
-        "output": {
-            "doctype": "<!DOCTYPE html>",
-            "page_title": "Test page",
-            "favicon": "favicon.ico",
-            "main_content": "<h1>Headings make html validators happier</h1>"
-         },
-        "bodyattributes":"",
-        "sidepreblocks": "<h2>Blocks html goes here</h2>",
-        "hasblocks":true,
-        "courseindexopen": true,
-        "navdraweropen": false,
-        "blockdraweropen": true,
-        "regionmainsettingsmenu": "",
-        "hasregionmainsettingsmenu": false,
-        "addblockbutton": ""
-    }
+    * faqenabled / faq - FAQ accordion, supplied by theme_moove\util\settings::frontpage()
+    * herotitle / herosubtitle / heroctalabel / heroctaurl - supplied by
+      theme_rofeo's layout/frontpage.php from theme_rofeo settings
 }}
 {{> theme_boost/head }}
 
@@ -59,33 +44,39 @@
 
     {{> theme_moove/navbar }}
 
-   <section class="rofeo-hero">
-    <div class="container">
-        <div class="row align-items-center g-5">
-            <div class="col-lg-6">
-                <h1 class="rofeo-hero__title">{{{ herotitle }}}</h1>
-                <div class="rofeo-hero__subtitle">{{{ herosubtitle }}}</div>
-                <a href="{{ heroctaurl }}" class="btn btn-primary btn-lg">{{ heroctalabel }}</a>
-            </div>
-            <div class="col-lg-6 d-none d-lg-block">
-                <div class="rofeo-hero__media"></div>
-            </div>
-        </div>
-    </div>
-</section>
+    <div id="page" data-region="mainpage" data-usertour="scroller" class="drawers drag-container bg-white">
 
-<div id="topofscroll">
-    <div id="page-content" class="d-print-block main-inner">
-        <div id="region-main-box">
-            <section id="region-main" aria-label="{{#str}}content{{/str}}">
-                <span id="catalogue"></span>
-                {{{ output.course_content_header }}}
-                {{{ output.main_content }}}
-                {{{ output.course_content_footer }}}
-            </section>
+        <section class="rofeo-hero">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <h1 class="rofeo-hero__title">{{{ herotitle }}}</h1>
+                        <div class="rofeo-hero__subtitle">{{{ herosubtitle }}}</div>
+                        {{#heroctalabel}}
+                            <a href="{{ heroctaurl }}" class="btn btn-primary btn-lg rofeo-hero__cta">
+                                {{ heroctalabel }}
+                            </a>
+                        {{/heroctalabel}}
+                    </div>
+                    <div class="col-lg-6 d-none d-lg-block">
+                        <div class="rofeo-hero__media" role="img" aria-label="{{ herotitle }}"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="topofscroll">
+            <div id="page-content" class="d-print-block main-inner">
+                <div id="region-main-box">
+                    <section id="region-main" aria-label="{{#str}}content{{/str}}">
+                        <span id="catalogue" class="rofeo-anchor"></span>
+                        {{{ output.course_content_header }}}
+                        {{{ output.main_content }}}
+                        {{{ output.course_content_footer }}}
+                    </section>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
         {{#faqenabled}}
             <section id="faq" class="scale-up scale-up-show">
@@ -111,12 +102,13 @@
                 </div>
             </section>
         {{/faqenabled}}
+
     </div>
+
     {{> theme_moove/footer }}
 
     {{{ output.standard_after_main_region_html }}}
 </div>
-
 
 </body>
 </html>
@@ -127,10 +119,6 @@
         M.util.js_complete('theme_boost/loader');
     });
     require(['jquery'], function($) {
-        $('.carousel').carousel({
-            interval: 5000
-        });
-
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             document.body.setAttribute('data-bs-theme', 'dark');
         }
