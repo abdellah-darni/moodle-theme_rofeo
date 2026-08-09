@@ -70,7 +70,8 @@ class catalogue implements renderable, templatable {
             'summary'  => $summary,
             'image'    => $image,
             'hasimage' => (bool) $image,
-            'infourl'  => (new moodle_url('/course/info.php', ['id' => $course->id]))->out(false),
+            'infourl' => (new moodle_url('/local/rofeo/course.php', ['id' => $course->id]))->out(false),
+            // 'infourl'  => (new moodle_url('/course/info.php', ['id' => $course->id]))->out(false),
             'enrolurl' => (new moodle_url('/enrol/index.php', ['id' => $course->id]))->out(false),
         ];
     }
