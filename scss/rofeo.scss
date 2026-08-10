@@ -1,3 +1,5 @@
+$rofeo-ink: #041834;
+
 .rofeo-hero {
     position: relative;
     display: flex;
@@ -20,14 +22,14 @@
         inset: 0;
         background: linear-gradient(
             100deg,
-            rgba(4, 24, 52, 0.94) 0%,
-            rgba(4, 24, 52, 0.82) 40%,
-            rgba(4, 24, 52, 0.35) 75%,
-            rgba(4, 24, 52, 0.20) 100%
+            rgba($rofeo-ink, 0.94) 0%,
+            rgba($rofeo-ink, 0.82) 40%,
+            rgba($rofeo-ink, 0.35) 75%,
+            rgba($rofeo-ink, 0.20) 100%
         );
 
         @include media-breakpoint-down(lg) {
-            background: rgba(4, 24, 52, 0.80);
+            background: rgba($rofeo-ink, 0.80);
         }
     }
 
@@ -277,6 +279,26 @@
         text-align: right;
 
         @include media-breakpoint-down(md) { text-align: left; }
+    }
+
+    &#page-footer {
+        background-color: $rofeo-ink;
+        color: rgba(255, 255, 255, 0.85);
+
+        a {
+            color: #fff;
+            text-decoration: none;
+
+            &:hover,
+            &:focus {
+                color: #fff;
+                text-decoration: underline;
+            }
+        }
+
+        .rofeo-footer__name { 
+            color: #fff; 
+        }
     }
 }
 
