@@ -34,7 +34,7 @@ function theme_rofeo_frontpage_defaults(): array {
         'heroctalabel'   => 'Voir les formations',
         'heroctaurl'     => '#catalogue',
         'cataloguetitle' => 'Catalogue des formations',
-        'coursectalabel' => 'Demander l\'accès',
+        'coursectalabel' => 'Voir la formations',
     ];
 }
 
