@@ -24,3 +24,6 @@ $string['coursectalabel'] = 'Course button label';
 $string['coursectalabel_desc'] = 'Text on the button under each course card.';
 
 $string['footerwebsite'] = 'Website';
+
+$string['emailfootersent'] = 'This email was sent to you by {$a}.';
+$string['emailfooterignore'] = 'If you did not request this, please ignore this message.';

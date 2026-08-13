@@ -24,3 +24,6 @@ $string['coursectalabel'] = 'Libellé du bouton des formations';
 $string['coursectalabel_desc'] = 'Texte du bouton sous chaque carte de formation.';
 
 $string['footerwebsite'] = 'Site web';
+
+$string['emailfootersent'] = 'Cet email vous a été envoyé par {$a}.';
+$string['emailfooterignore'] = 'Si vous n\'avez pas demandé cela, veuillez ignorer ce message.';

@@ -1,0 +1,19 @@
+{{!
+    @template core/email_text
+    ROFEO plain-text wrapper for all emails.
+    Context variables required for this template:
+    * sitefullname
+    * sitewwwroot
+    * body
+    Example context (json):
+    {
+        "sitefullname": "ROFEO Academy",
+        "sitewwwroot": "https://rofeo.com",
+        "body": "Email body"
+    }
+}}
+{{{body}}}
+
+--
+{{#str}} emailfootersent, theme_rofeo, {{sitefullname}} {{/str}}
+{{{sitewwwroot}}}

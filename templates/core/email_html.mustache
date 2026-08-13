@@ -12,36 +12,42 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
 <title>{{subject}}</title>
 </head>
 <body style="margin:0; padding:0; background-color:#f4f5f7; font-family:Helvetica,Arial,sans-serif;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f4f5f7;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
+       bgcolor="#f4f5f7" style="background-color:#f4f5f7;">
   <tr>
     <td align="center" style="padding:24px 12px;">
 
       <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0"
-             style="width:600px; max-width:100%; background-color:#ffffff; border-radius:6px;">
+             bgcolor="#ffffff" style="width:600px; max-width:100%; background-color:#ffffff; border-radius:6px;">
 
         <tr>
-          <td style="background-color:#0f47ad; padding:20px 28px;">
+          <td bgcolor="#0f47ad" style="background-color:#0f47ad; padding:20px 28px;
+                     font-family:Helvetica,Arial,sans-serif;">
             <a href="{{{sitewwwroot}}}"
-               style="color:#ffffff; font-size:20px; font-weight:bold; text-decoration:none;">{{sitefullname}}</a>
+               style="color:#ffffff; font-family:Helvetica,Arial,sans-serif; font-size:20px;
+                      font-weight:bold; text-decoration:none;">{{sitefullname}}</a>
           </td>
         </tr>
 
         <tr>
-          <td style="padding:28px; color:#25282b; font-size:15px; line-height:1.6;">
+          <td style="padding:28px; color:#25282b; font-family:Helvetica,Arial,sans-serif;
+                     font-size:15px; line-height:1.6;">
             {{{body}}}
           </td>
         </tr>
 
         <tr>
-          <td style="padding:18px 28px; background-color:#f0f1f3; color:#6b7075; font-size:12px; line-height:1.5;">
+          <td bgcolor="#f0f1f3" style="padding:18px 28px; background-color:#f0f1f3; color:#6b7075;
+                     font-family:Helvetica,Arial,sans-serif; font-size:12px; line-height:1.5;">
             <p style="margin:0 0 6px 0;">
-              Cet email vous a été envoyé par
-              <a href="{{{sitewwwroot}}}" style="color:#0f47ad;">{{sitefullname}}</a>.
+                {{#str}} emailfootersent, theme_rofeo, {{sitefullname}} {{/str}}
             </p>
-            <p style="margin:0;">Si vous n'êtes pas à l'origine de cette demande, ignorez ce message.</p>
+            <p style="margin:0;">{{#str}} emailfooterignore, theme_rofeo {{/str}}</p>
           </td>
         </tr>
 
