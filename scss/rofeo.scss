@@ -262,12 +262,12 @@ $rofeo-ink: #041834;
     }
 }
 
+#page-footer { display: none; }
+
+.pagelayout-frontpage #page-footer,
+.rofeo-has-footer #page-footer { display: block; }
+
 .rofeo-footer {
-    #page-footer { display: none; }
-
-    .pagelayout-frontpage #page-footer,
-    .rofeo-has-footer #page-footer { display: block; }
-
     &__inner {
         display: flex;
         flex-wrap: wrap;
