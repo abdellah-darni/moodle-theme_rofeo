@@ -1,33 +1,52 @@
 {{!
-    ROFEO slim footer.
+    ROFEO footer: brand block, contact block, copyright line.
     Forked from theme_moove/templates/footer.mustache (branch main, August 2026).
+
+    Context variables required for this template:
+    * sitename, footertagline, copyrightyear - supplied by theme_rofeo's
+      layout/frontpage.php from theme_rofeo settings (footertagline) and
+      computed values (copyrightyear)
+    * hasfootercontact, mail, mobile, website, whatsapp,
+      hasfootersocial, facebook, instagram, youtube, linkedin, tiktok -
+      moove's own footer settings, merged into context by
+      layout/frontpage.php via theme_moove\util\settings::footer(). Reused
+      as-is, not duplicated into theme_rofeo settings.
 }}
 
 <footer id="page-footer" class="rofeo-footer">
-    <div class="moove-container-fluid rofeo-footer__inner">
+    <div class="rofeo-footer__inner">
 
         <div class="rofeo-footer__brand">
             <div class="rofeo-footer__name">{{ sitename }}</div>
+            {{#footertagline}}
+                <div class="rofeo-footer__tagline">{{{ footertagline }}}</div>
+            {{/footertagline}}
+        </div>
 
+        <div class="rofeo-footer__contact">
             {{#hasfootercontact}}
                 <ul class="rofeo-footer__links">
                     {{#mail}}<li><a href="mailto:{{{mail}}}">{{{mail}}}</a></li>{{/mail}}
                     {{#mobile}}<li><a href="tel:{{{mobile}}}">{{{mobile}}}</a></li>{{/mobile}}
+                    {{#whatsapp}}<li><a href="https://api.whatsapp.com/send?phone={{{whatsapp}}}" target="_blank" rel="noopener">WhatsApp</a></li>{{/whatsapp}}
                     {{#website}}<li><a href="{{{website}}}" target="_blank" rel="noopener">{{#str}}footerwebsite, theme_rofeo{{/str}}</a></li>{{/website}}
                 </ul>
             {{/hasfootercontact}}
+
+            {{#hasfootersocial}}
+                <ul class="rofeo-footer__social">
+                    {{#facebook}}<li><a href="{{{facebook}}}" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook"></i></a></li>{{/facebook}}
+                    {{#instagram}}<li><a href="{{{instagram}}}" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a></li>{{/instagram}}
+                    {{#youtube}}<li><a href="{{{youtube}}}" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa fa-youtube"></i></a></li>{{/youtube}}
+                    {{#linkedin}}<li><a href="{{{linkedin}}}" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a></li>{{/linkedin}}
+                    {{#tiktok}}<li><a href="{{{tiktok}}}" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a></li>{{/tiktok}}
+                </ul>
+            {{/hasfootersocial}}
         </div>
 
-        {{#hasfootersocial}}
-            <ul class="rofeo-footer__social">
-                {{#facebook}}<li><a href="{{{facebook}}}" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook"></i></a></li>{{/facebook}}
-                {{#instagram}}<li><a href="{{{instagram}}}" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a></li>{{/instagram}}
-                {{#youtube}}<li><a href="{{{youtube}}}" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa fa-youtube"></i></a></li>{{/youtube}}
-                {{#linkedin}}<li><a href="{{{linkedin}}}" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a></li>{{/linkedin}}
-                {{#whatsapp}}<li><a href="https://api.whatsapp.com/send?phone={{{whatsapp}}}" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa fa-whatsapp"></i></a></li>{{/whatsapp}}
-                {{#tiktok}}<li><a href="{{{tiktok}}}" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a></li>{{/tiktok}}
-            </ul>
-        {{/hasfootersocial}}
+        <div class="rofeo-footer__copyright">
+            &copy; {{ copyrightyear }} {{ sitename }}. {{#str}}allrightsreserved, theme_rofeo{{/str}}
+        </div>
 
         <div class="rofeo-footer__meta">
             {{# output.supportemail }}

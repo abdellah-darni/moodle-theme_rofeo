@@ -58,6 +58,7 @@ function theme_rofeo_frontpage_defaults(): array {
         'faq2answer'   => 'Oui. Le matériel nécessaire est mis à disposition pendant les séances.',
         'faq3question' => 'À partir de quel âge peut-on s\'inscrire ?',
         'faq3answer'   => 'Chaque formation indique la tranche d\'âge concernée sur sa page de détail.',
+        'footertagline' => 'L\'excellence éducative au service du futur de la technologie et du faire.',
     ];
 }
 

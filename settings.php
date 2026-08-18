@@ -117,4 +117,13 @@ if ($ADMIN->fulltree) {
 
     $addfield('faq3question');
     $addfield('faq3answer', 'textarea');
+
+    // Footer section.
+    $settings->add(new admin_setting_heading(
+        'theme_rofeo/footerheading',
+        get_string('footerheading', 'theme_rofeo'),
+        ''
+    ));
+
+    $addfield('footertagline', 'textarea');
 }

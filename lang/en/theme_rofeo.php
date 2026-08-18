@@ -74,6 +74,11 @@ $string['faq3question_desc'] = 'Leave empty to hide this question.';
 $string['faq3answer'] = 'Answer 3';
 $string['faq3answer_desc'] = 'Answer to the third question.';
 
+$string['footerheading'] = 'Footer';
+$string['footertagline'] = 'Tagline';
+$string['footertagline_desc'] = 'Short sentence shown under the site name in the footer.';
+$string['allrightsreserved'] = 'All rights reserved.';
+
 $string['footerwebsite'] = 'Website';
 
 $string['emailfootersent'] = 'This email was sent to you by {$a}.';

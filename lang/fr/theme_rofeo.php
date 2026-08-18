@@ -73,6 +73,11 @@ $string['faq3question_desc'] = 'Laissez vide pour ne pas afficher cette question
 $string['faq3answer'] = 'Réponse 3';
 $string['faq3answer_desc'] = 'Réponse à la troisième question.';
 
+$string['footerheading'] = 'Pied de page';
+$string['footertagline'] = 'Phrase d\'accroche';
+$string['footertagline_desc'] = 'Courte phrase affichée sous le nom du site dans le pied de page.';
+$string['allrightsreserved'] = 'Tous droits réservés.';
+
 $string['footerwebsite'] = 'Site web';
 
 $string['emailfootersent'] = 'Cet email vous a été envoyé par {$a}.';

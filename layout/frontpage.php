@@ -179,4 +179,7 @@ $templatecontext['faqitems'] = $faqitems;
 
 $templatecontext['faqenabled'] = (int) theme_rofeo_setting('faqenabled') === 1 && !empty($faqitems);
 
+$templatecontext['footertagline'] = format_text(theme_rofeo_setting('footertagline'), FORMAT_HTML);
+$templatecontext['copyrightyear'] = date('Y');
+
 echo $OUTPUT->render_from_template($template, $templatecontext);
