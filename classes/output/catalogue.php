@@ -16,9 +16,22 @@ class catalogue implements renderable, templatable {
         $categories = [];
 
         foreach (core_course_category::top()->get_children() as $category) {
+            if (!$category->visible) {
+                continue;
+            }
+
             $courses = [];
 
             foreach ($category->get_courses(['recursive' => true]) as $course) {
+                if (!$course->visible) {
+                    continue;
+                }
+
+                $coursecategory = core_course_category::get($course->category, IGNORE_MISSING, true);
+                if (!$coursecategory || !$coursecategory->visible) {
+                    continue;
+                }
+
                 $courses[] = $this->export_course($course);
             }
 
