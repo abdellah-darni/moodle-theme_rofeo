@@ -26,17 +26,23 @@
       - hero section added, driven by theme_rofeo settings
       - #catalogue anchor added ahead of the course list
       - "why choose us" section added between the course list and the FAQ
+      - FAQ moved from moove's own settings page to theme_rofeo settings, so
+        every front page setting lives on one admin page; moove's
+        theme_moove\util\settings::frontpage() is no longer used here at all
+        (its footer() call is separate and still is)
       - carousel JS removed (no slider markup left to initialise)
 
     Context variables required for this template:
     * output - The core renderer for the page
     * bodyattributes - attributes for the body tag as a string of html attributes
-    * faqenabled / faq - FAQ accordion, supplied by theme_moove\util\settings::frontpage()
     * herotitle / herosubtitle / heroctalabel / heroctaurl - supplied by
       theme_rofeo's layout/frontpage.php from theme_rofeo settings
     * whyenabled / whytitle / whysubtitle / whycards - "why choose us" section,
       rendered by the self-contained theme_rofeo/why partial (gated internally
       on whyenabled), supplied by theme_rofeo's layout/frontpage.php
+    * faqenabled / faqtitle / faqsubtitle / faqitems - FAQ section, rendered
+      by the self-contained theme_rofeo/faq partial (gated internally on
+      faqenabled), supplied by theme_rofeo's layout/frontpage.php
 }}
 {{> theme_boost/head }}
 
@@ -84,30 +90,7 @@
 
         {{> theme_rofeo/why }}
 
-        {{#faqenabled}}
-            <section id="faq" class="scale-up scale-up-show">
-                <div class="moove-container-fluid">
-                    <h2>{{#str}}faq, theme_moove{{/str}}</h2>
-
-                    <div class="accordion" id="accordion-faq">
-                        {{#faq}}
-                            <div class="accordion-item mb-1">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button {{^active}}collapsed{{/active}}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{{id}}}" aria-expanded="true" aria-controls="collapse-{{{id}}}">
-                                        {{{question}}}
-                                    </button>
-                                </h2>
-                                <div id="collapse-{{{id}}}" class="accordion-collapse collapse {{#active}}show{{/active}}" data-bs-parent="#accordion-faq">
-                                    <div class="accordion-body">
-                                        {{{answer}}}
-                                    </div>
-                                </div>
-                            </div>
-                        {{/faq}}
-                    </div>
-                </div>
-            </section>
-        {{/faqenabled}}
+        {{> theme_rofeo/faq }}
 
     </div>
 

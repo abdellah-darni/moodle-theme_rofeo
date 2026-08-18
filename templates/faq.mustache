@@ -1,0 +1,49 @@
+{{!
+    ROFEO FAQ section, included from theme_moove/frontpage between the "why
+    choose us" section and the footer. Self-contained: gated on faqenabled
+    here, so the include is a no-op when the section is disabled or empty.
+
+    Note for anyone editing this file: avoid writing literal double-brace
+    tag examples inside this comment block. Mustache comments end at the
+    first closing brace pair they contain, wherever it falls, so a tag
+    reference written in full inside the comment text closes the comment
+    early and turns the rest of this block into literal page output.
+
+    Context variables required for this template:
+    * faqenabled - true only when the admin has enabled the section AND at
+      least one question/answer pair has content, supplied by
+      layout/frontpage.php
+    * faqtitle, faqsubtitle - theme_rofeo settings
+    * faqitems - array of id, question, answer, active
+}}
+{{#faqenabled}}
+    <section class="rofeo-faq" id="faq">
+        <div class="rofeo-faq__inner">
+            <h2 class="rofeo-faq__heading">{{{ faqtitle }}}</h2>
+            {{#faqsubtitle}}
+                <div class="rofeo-faq__subtitle">{{{ faqsubtitle }}}</div>
+            {{/faqsubtitle}}
+
+            <div class="accordion rofeo-faq__accordion" id="rofeo-faq-accordion">
+                {{#faqitems}}
+                    <div class="accordion-item rofeo-faq__item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button {{^active}}collapsed{{/active}}" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#rofeo-faq-collapse-{{id}}"
+                                    aria-expanded="{{#active}}true{{/active}}{{^active}}false{{/active}}"
+                                    aria-controls="rofeo-faq-collapse-{{id}}">
+                                {{{ question }}}
+                            </button>
+                        </h3>
+                        <div id="rofeo-faq-collapse-{{id}}" class="accordion-collapse collapse {{#active}}show{{/active}}"
+                             data-bs-parent="#rofeo-faq-accordion">
+                            <div class="accordion-body">
+                                {{{ answer }}}
+                            </div>
+                        </div>
+                    </div>
+                {{/faqitems}}
+            </div>
+        </div>
+    </section>
+{{/faqenabled}}

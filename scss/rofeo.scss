@@ -278,6 +278,59 @@ $rofeo-gold: #caa53d;
     }
 }
 
+.rofeo-faq {
+    padding: 4rem 0;
+
+    &__inner {
+        @extend %rofeo-container;
+        padding: 0 1.5rem;
+    }
+
+    &__heading {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+        text-align: center;
+    }
+
+    &__subtitle {
+        font-size: 1rem;
+        color: $gray-700;
+        max-width: 42rem;
+        margin: 0 auto 2.5rem;
+        text-align: center;
+    }
+
+    &__item {
+        border: 1px solid $gray-200;
+        border-radius: 0.75rem;
+        overflow: hidden;
+        margin-bottom: 1rem;
+
+        &:last-child { margin-bottom: 0; }
+    }
+
+    &__item .accordion-button {
+        font-weight: 600;
+        font-size: 1rem;
+
+        &:not(.collapsed) {
+            color: $primary;
+            background-color: $gray-100;
+        }
+
+        &:focus {
+            box-shadow: none;
+            border-color: $gray-200;
+        }
+    }
+
+    &__item .accordion-body {
+        color: $gray-700;
+        line-height: 1.6;
+    }
+}
+
 .rofeo-detail {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 20rem;

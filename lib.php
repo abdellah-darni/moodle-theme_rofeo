@@ -49,6 +49,15 @@ function theme_rofeo_frontpage_defaults(): array {
         'why3icon'  => 'fa-users',
         'why3title' => 'Des parcours pour tous les niveaux',
         'why3body'  => 'Du débutant complet au participant confirmé, chaque formation part de là où vous en êtes.',
+        'faqenabled'  => 1,
+        'faqtitle'    => 'Questions fréquentes',
+        'faqsubtitle' => 'Tout ce que vous devez savoir avant de vous lancer.',
+        'faq1question' => 'Faut-il des prérequis en programmation ?',
+        'faq1answer'   => 'Non. Nos formations débutant partent de zéro et n\'exigent aucune expérience préalable.',
+        'faq2question' => 'Le matériel est-il fourni pendant la formation ?',
+        'faq2answer'   => 'Oui. Le matériel nécessaire est mis à disposition pendant les séances.',
+        'faq3question' => 'À partir de quel âge peut-on s\'inscrire ?',
+        'faq3answer'   => 'Chaque formation indique la tranche d\'âge concernée sur sa page de détail.',
     ];
 }
 

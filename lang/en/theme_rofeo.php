@@ -54,6 +54,26 @@ $string['why3title_desc'] = 'Title of the third point.';
 $string['why3body'] = 'Point 3: text';
 $string['why3body_desc'] = 'Text of the third point.';
 
+$string['faqheading'] = 'Frequently asked questions';
+$string['faqenabled'] = 'Show the section';
+$string['faqenabled_desc'] = 'Show or hide the frequently asked questions section on the front page.';
+$string['faqtitle'] = 'Section title';
+$string['faqtitle_desc'] = 'Heading shown above the questions.';
+$string['faqsubtitle'] = 'Section subtitle';
+$string['faqsubtitle_desc'] = 'Text shown under the section heading.';
+$string['faq1question'] = 'Question 1';
+$string['faq1question_desc'] = 'Leave empty to hide this question.';
+$string['faq1answer'] = 'Answer 1';
+$string['faq1answer_desc'] = 'Answer to the first question.';
+$string['faq2question'] = 'Question 2';
+$string['faq2question_desc'] = 'Leave empty to hide this question.';
+$string['faq2answer'] = 'Answer 2';
+$string['faq2answer_desc'] = 'Answer to the second question.';
+$string['faq3question'] = 'Question 3';
+$string['faq3question_desc'] = 'Leave empty to hide this question.';
+$string['faq3answer'] = 'Answer 3';
+$string['faq3answer_desc'] = 'Answer to the third question.';
+
 $string['footerwebsite'] = 'Website';
 
 $string['emailfootersent'] = 'This email was sent to you by {$a}.';

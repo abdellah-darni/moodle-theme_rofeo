@@ -53,6 +53,26 @@ $string['why3title_desc'] = 'Titre du troisième argument.';
 $string['why3body'] = 'Argument 3 : texte';
 $string['why3body_desc'] = 'Texte du troisième argument.';
 
+$string['faqheading'] = 'Questions fréquentes';
+$string['faqenabled'] = 'Afficher la section';
+$string['faqenabled_desc'] = 'Afficher ou masquer la section des questions fréquentes sur la page d\'accueil.';
+$string['faqtitle'] = 'Titre de la section';
+$string['faqtitle_desc'] = 'Titre affiché au-dessus des questions.';
+$string['faqsubtitle'] = 'Sous-titre de la section';
+$string['faqsubtitle_desc'] = 'Texte affiché sous le titre de la section.';
+$string['faq1question'] = 'Question 1';
+$string['faq1question_desc'] = 'Laissez vide pour ne pas afficher cette question.';
+$string['faq1answer'] = 'Réponse 1';
+$string['faq1answer_desc'] = 'Réponse à la première question.';
+$string['faq2question'] = 'Question 2';
+$string['faq2question_desc'] = 'Laissez vide pour ne pas afficher cette question.';
+$string['faq2answer'] = 'Réponse 2';
+$string['faq2answer_desc'] = 'Réponse à la deuxième question.';
+$string['faq3question'] = 'Question 3';
+$string['faq3question_desc'] = 'Laissez vide pour ne pas afficher cette question.';
+$string['faq3answer'] = 'Réponse 3';
+$string['faq3answer_desc'] = 'Réponse à la troisième question.';
+
 $string['footerwebsite'] = 'Site web';
 
 $string['emailfootersent'] = 'Cet email vous a été envoyé par {$a}.';

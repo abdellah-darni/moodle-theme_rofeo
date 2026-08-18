@@ -122,7 +122,6 @@ $templatecontext = array_merge($templatecontext, $themesettings->footer());
 
 $template = 'theme_moove/drawers';
 
-$templatecontext = array_merge($templatecontext, $themesettings->frontpage());
 $template = 'theme_moove/frontpage';
 
 foreach (['herotitle', 'heroctalabel', 'heroctaurl'] as $key) {
@@ -156,5 +155,28 @@ for ($i = 1; $i <= 3; $i++) {
         'body'  => format_text(theme_rofeo_setting("why{$i}body"), FORMAT_HTML),
     ];
 }
+
+$templatecontext['faqtitle'] = format_string(theme_rofeo_setting('faqtitle'));
+$templatecontext['faqsubtitle'] = format_text(theme_rofeo_setting('faqsubtitle'), FORMAT_HTML);
+
+$faqitems = [];
+$firstfaqdone = false;
+for ($i = 1; $i <= 3; $i++) {
+    $question = theme_rofeo_setting("faq{$i}question");
+    if (trim($question) === '') {
+        continue;
+    }
+
+    $faqitems[] = [
+        'id' => $i,
+        'question' => format_string($question),
+        'answer' => format_text(theme_rofeo_setting("faq{$i}answer"), FORMAT_HTML),
+        'active' => !$firstfaqdone,
+    ];
+    $firstfaqdone = true;
+}
+$templatecontext['faqitems'] = $faqitems;
+
+$templatecontext['faqenabled'] = (int) theme_rofeo_setting('faqenabled') === 1 && !empty($faqitems);
 
 echo $OUTPUT->render_from_template($template, $templatecontext);

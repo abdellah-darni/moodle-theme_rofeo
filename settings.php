@@ -88,4 +88,33 @@ if ($ADMIN->fulltree) {
     $addfield('why3icon');
     $addfield('why3title');
     $addfield('why3body', 'textarea');
+
+    // FAQ section.
+    $settings->add(new admin_setting_heading(
+        'theme_rofeo/faqheading',
+        get_string('faqheading', 'theme_rofeo'),
+        ''
+    ));
+
+    $faqenabled = new admin_setting_configselect(
+        'theme_rofeo/faqenabled',
+        get_string('faqenabled', 'theme_rofeo'),
+        get_string('faqenabled_desc', 'theme_rofeo'),
+        $defaults['faqenabled'] ?? 1,
+        [0 => get_string('no'), 1 => get_string('yes')]
+    );
+    $faqenabled->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($faqenabled);
+
+    $addfield('faqtitle');
+    $addfield('faqsubtitle', 'textarea');
+
+    $addfield('faq1question');
+    $addfield('faq1answer', 'textarea');
+
+    $addfield('faq2question');
+    $addfield('faq2answer', 'textarea');
+
+    $addfield('faq3question');
+    $addfield('faq3answer', 'textarea');
 }
