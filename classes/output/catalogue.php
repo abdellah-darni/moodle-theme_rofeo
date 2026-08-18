@@ -122,7 +122,7 @@ class catalogue implements renderable, templatable {
         $handler = \core_course\customfield\course_handler::create();
 
         foreach ($handler->export_instance_data($courseid, true) as $data) {
-            if ($data->get_field()->get('shortname') !== 'niveau') {
+            if ($data->get_shortname() !== 'niveau') {
                 continue;
             }
 
