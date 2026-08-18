@@ -144,4 +144,17 @@ $templatecontext['heroimageurl'] = $heroimage;
 $catalogue = new \theme_rofeo\output\catalogue();
 $templatecontext = array_merge($templatecontext, $catalogue->export_for_template($OUTPUT));
 
+$templatecontext['whyenabled'] = (int) theme_rofeo_setting('whyenabled') === 1;
+$templatecontext['whytitle'] = format_string(theme_rofeo_setting('whytitle'));
+$templatecontext['whysubtitle'] = format_text(theme_rofeo_setting('whysubtitle'), FORMAT_HTML);
+
+$templatecontext['whycards'] = [];
+for ($i = 1; $i <= 3; $i++) {
+    $templatecontext['whycards'][] = [
+        'icon'  => theme_rofeo_setting("why{$i}icon"),
+        'title' => format_string(theme_rofeo_setting("why{$i}title")),
+        'body'  => format_text(theme_rofeo_setting("why{$i}body"), FORMAT_HTML),
+    ];
+}
+
 echo $OUTPUT->render_from_template($template, $templatecontext);

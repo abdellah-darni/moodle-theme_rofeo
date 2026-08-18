@@ -56,4 +56,36 @@ if ($ADMIN->fulltree) {
     $addfield('cataloguesubtitle', 'textarea');
     $addfield('coursectalabel');
     $addfield('catalogueempty', 'textarea');
+
+    // Why section.
+    $settings->add(new admin_setting_heading(
+        'theme_rofeo/whyheading',
+        get_string('whyheading', 'theme_rofeo'),
+        ''
+    ));
+
+    $whyenabled = new admin_setting_configselect(
+        'theme_rofeo/whyenabled',
+        get_string('whyenabled', 'theme_rofeo'),
+        get_string('whyenabled_desc', 'theme_rofeo'),
+        $defaults['whyenabled'] ?? 1,
+        [0 => get_string('no'), 1 => get_string('yes')]
+    );
+    $whyenabled->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($whyenabled);
+
+    $addfield('whytitle');
+    $addfield('whysubtitle', 'textarea');
+
+    $addfield('why1icon');
+    $addfield('why1title');
+    $addfield('why1body', 'textarea');
+
+    $addfield('why2icon');
+    $addfield('why2title');
+    $addfield('why2body', 'textarea');
+
+    $addfield('why3icon');
+    $addfield('why3title');
+    $addfield('why3body', 'textarea');
 }

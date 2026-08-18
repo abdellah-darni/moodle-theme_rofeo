@@ -25,6 +25,7 @@
       - slider, marketing boxes and numbers sections removed
       - hero section added, driven by theme_rofeo settings
       - #catalogue anchor added ahead of the course list
+      - "why choose us" section added between the course list and the FAQ
       - carousel JS removed (no slider markup left to initialise)
 
     Context variables required for this template:
@@ -33,6 +34,9 @@
     * faqenabled / faq - FAQ accordion, supplied by theme_moove\util\settings::frontpage()
     * herotitle / herosubtitle / heroctalabel / heroctaurl - supplied by
       theme_rofeo's layout/frontpage.php from theme_rofeo settings
+    * whyenabled / whytitle / whysubtitle / whycards - "why choose us" section,
+      rendered by the self-contained theme_rofeo/why partial (gated internally
+      on whyenabled), supplied by theme_rofeo's layout/frontpage.php
 }}
 {{> theme_boost/head }}
 
@@ -77,6 +81,8 @@
                 </div>
             </div>
         </div>
+
+        {{> theme_rofeo/why }}
 
         {{#faqenabled}}
             <section id="faq" class="scale-up scale-up-show">

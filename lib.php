@@ -37,6 +37,18 @@ function theme_rofeo_frontpage_defaults(): array {
         'cataloguesubtitle' => 'Des parcours conçus par des experts pour transformer votre curiosité en compétences tangibles.',
         'coursectalabel' => 'Voir la formations',
         'catalogueempty' => 'Le catalogue sera bientôt disponible.',
+        'whyenabled'  => 1,
+        'whytitle'    => 'Pourquoi choisir ROFEO ?',
+        'whysubtitle' => 'Une approche pédagogique qui combine théorie solide et expérimentation concrète.',
+        'why1icon'  => 'fa-wrench',
+        'why1title' => 'Apprentissage pratique',
+        'why1body'  => 'Des ateliers où l\'on construit, teste et recommence. Chaque notion s\'apprend en manipulant du vrai matériel.',
+        'why2icon'  => 'fa-code',
+        'why2title' => 'Progression encadrée',
+        'why2body'  => 'Un formateur vous accompagne à chaque étape, du premier montage au projet autonome.',
+        'why3icon'  => 'fa-users',
+        'why3title' => 'Des parcours pour tous les niveaux',
+        'why3body'  => 'Du débutant complet au participant confirmé, chaque formation part de là où vous en êtes.',
     ];
 }
 
