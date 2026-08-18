@@ -22,6 +22,7 @@ $string['cataloguetitle'] = 'Catalogue heading';
 $string['cataloguetitle_desc'] = 'Heading shown above the course catalogue on the front page.';
 $string['coursectalabel'] = 'Course button label';
 $string['coursectalabel_desc'] = 'Text on the button under each course card.';
+$string['coursehiddenbadge'] = 'Hidden';
 
 $string['footerwebsite'] = 'Website';
 

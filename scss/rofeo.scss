@@ -120,6 +120,7 @@ $rofeo-ink: #041834;
 }
 
 .rofeo-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     background: #fff;
@@ -129,6 +130,16 @@ $rofeo-ink: #041834;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 
     &:hover { transform: translateY(-2px); box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.08); }
+
+    &__badge {
+        position: absolute;
+        top: 0.75rem;
+        right: 0.75rem;
+        z-index: 2;
+        text-transform: uppercase;
+        font-size: 0.6875rem;
+        letter-spacing: 0.04em;
+    }
 
     &__body {
         display: flex;

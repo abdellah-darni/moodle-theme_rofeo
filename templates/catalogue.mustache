@@ -10,6 +10,9 @@
                     {{#courses}}
                         <article class="rofeo-card">
                             <a href="{{ infourl }}" class="rofeo-card__body">
+                                {{#hidden}}
+                                    <span class="badge badge-warning rofeo-card__badge">{{#str}}coursehiddenbadge, theme_rofeo{{/str}}</span>
+                                {{/hidden}}
                                 {{#hasimage}}
                                     <img src="{{ image }}" alt="" class="rofeo-card__img" loading="lazy">
                                 {{/hasimage}}
