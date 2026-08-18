@@ -1,0 +1,30 @@
+{{!
+    ROFEO course card. Shared by the flat and grouped-by-category branches of
+    templates/catalogue.mustache, rendered once per course.
+
+    Context variables required for this template:
+    * fullname, summary, image, hasimage, hidden, niveau, hasniveau, infourl -
+      supplied per-course by theme_rofeo\output\catalogue
+    * coursectalabel - resolved from the parent catalogue context
+}}
+<article class="rofeo-card">
+    <a href="{{ infourl }}" class="rofeo-card__body">
+        {{#hasniveau}}
+            <span class="rofeo-card__level">{{ niveau }}</span>
+        {{/hasniveau}}
+        {{#hidden}}
+            <span class="badge badge-warning rofeo-card__badge">{{#str}}coursehiddenbadge, theme_rofeo{{/str}}</span>
+        {{/hidden}}
+        {{#hasimage}}
+            <img src="{{ image }}" alt="" class="rofeo-card__img" loading="lazy">
+        {{/hasimage}}
+        {{^hasimage}}
+            <div class="rofeo-card__img rofeo-card__img--empty"></div>
+        {{/hasimage}}
+        <h4 class="rofeo-card__title">{{{ fullname }}}</h4>
+        {{#summary}}
+            <p class="rofeo-card__summary">{{ summary }}</p>
+        {{/summary}}
+        <span class="rofeo-card__cta">{{{ coursectalabel }}}</span>
+    </a>
+</article>

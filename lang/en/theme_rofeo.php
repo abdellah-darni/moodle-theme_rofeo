@@ -20,9 +20,13 @@ $string['heroimage_desc'] = 'Image shown beside the headline. Landscape, at leas
 $string['catalogueheading'] = 'Course catalogue';
 $string['cataloguetitle'] = 'Catalogue heading';
 $string['cataloguetitle_desc'] = 'Heading shown above the course catalogue on the front page.';
+$string['cataloguesubtitle'] = 'Catalogue subtitle';
+$string['cataloguesubtitle_desc'] = 'Text shown under the catalogue heading.';
 $string['coursectalabel'] = 'Course button label';
 $string['coursectalabel_desc'] = 'Text on the button under each course card.';
 $string['coursehiddenbadge'] = 'Hidden';
+$string['catalogueempty'] = 'Empty catalogue message';
+$string['catalogueempty_desc'] = 'Message shown when no course is available.';
 
 $string['footerwebsite'] = 'Website';
 

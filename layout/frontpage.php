@@ -131,7 +131,9 @@ foreach (['herotitle', 'heroctalabel', 'heroctaurl'] as $key) {
 
 $templatecontext['herosubtitle'] = format_text(theme_rofeo_setting('herosubtitle'), FORMAT_HTML);
 $templatecontext['cataloguetitle'] = format_string(theme_rofeo_setting('cataloguetitle'));
+$templatecontext['cataloguesubtitle'] = format_text(theme_rofeo_setting('cataloguesubtitle'), FORMAT_HTML);
 $templatecontext['coursectalabel'] = format_string(theme_rofeo_setting('coursectalabel'));
+$templatecontext['catalogueempty'] = format_text(theme_rofeo_setting('catalogueempty'), FORMAT_HTML);
 
 $heroimage = $PAGE->theme->setting_file_url('heroimage', 'heroimage');
 if (empty($heroimage)) {

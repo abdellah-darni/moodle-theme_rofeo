@@ -1,4 +1,15 @@
 $rofeo-ink: #041834;
+$rofeo-gold: #caa53d;
+
+%rofeo-container {
+    width: 100%;
+    max-width: 85%;
+    margin-inline: auto;
+
+    @include media-breakpoint-down(md) {
+        max-width: 95%;
+    }
+}
 
 .rofeo-hero {
     position: relative;
@@ -34,16 +45,10 @@ $rofeo-ink: #041834;
     }
 
     &__inner {
+        @extend %rofeo-container;
         position: relative;
         z-index: 1;
-        width: 100%;
-        max-width: 85%;
-        margin-inline: auto;
         padding: 4rem 1.5rem;
-
-        @include media-breakpoint-down(md) {
-            max-width: 95%;
-        }
     }
 
     &__content {
@@ -86,20 +91,21 @@ $rofeo-ink: #041834;
     padding: 4rem 0;
 
     &__inner {
-        width: 100%;
-        max-width: 85%;
-        margin-inline: auto;
+        @extend %rofeo-container;
         padding: 0 1.5rem;
-
-        @include media-breakpoint-down(md) {
-            max-width: 95%;
-        }
     }
 
     &__heading {
         font-size: 2rem;
         font-weight: 700;
-        margin-bottom: 2.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    &__subtitle {
+        font-size: 1rem;
+        color: $gray-700;
+        max-width: 42rem;
+        margin: 0 0 2.5rem;
     }
 
     &__group { margin-bottom: 3.5rem; }
@@ -110,6 +116,14 @@ $rofeo-ink: #041834;
         margin-bottom: 1.25rem;
         padding-bottom: 0.5rem;
         border-bottom: 1px solid $gray-300;
+    }
+
+    &__empty {
+        text-align: center;
+        padding: 3rem 1.5rem;
+        border: 1px dashed $gray-300;
+        border-radius: 0.75rem;
+        color: $gray-700;
     }
 }
 
@@ -141,6 +155,21 @@ $rofeo-ink: #041834;
         letter-spacing: 0.04em;
     }
 
+    &__level {
+        position: absolute;
+        top: 0.75rem;
+        left: 0.75rem;
+        z-index: 2;
+        background: $rofeo-gold;
+        color: $rofeo-ink;
+        font-size: 0.6875rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        padding: 0.25rem 0.625rem;
+        border-radius: 999px;
+    }
+
     &__body {
         display: flex;
         flex-direction: column;
@@ -168,7 +197,17 @@ $rofeo-ink: #041834;
     }
 
     &__title { font-size: 1rem; font-weight: 600; margin: 1rem 1rem 0.5rem; }
-    &__cta { margin: 0 1rem 1rem; align-self: flex-start; }
+
+    &__cta {
+        margin: 0 1rem 1rem;
+        align-self: flex-start;
+        color: $primary;
+        font-weight: 600;
+        font-size: 0.875rem;
+        text-decoration: none;
+    }
+
+    &__body:hover &__cta { text-decoration: underline; }
 }
 
 .rofeo-detail {

@@ -13,8 +13,12 @@ use templatable;
 
 class catalogue implements renderable, templatable {
 
+    /** Below this many visible courses, render one ungrouped grid instead of grouping by category. */
+    private const FLAT_LAYOUT_THRESHOLD = 6;
+
     public function export_for_template(renderer_base $output): array {
         $categories = [];
+        $allcourses = [];
 
         // get_children() already excludes categories the current viewer has no
         // capability to see, so a hidden top-level category only reaches this
@@ -38,7 +42,9 @@ class catalogue implements renderable, templatable {
                     }
                 }
 
-                $courses[] = $this->export_course($course, !$course->visible || $categoryhidden);
+                $exported = $this->export_course($course, !$course->visible || $categoryhidden);
+                $courses[] = $exported;
+                $allcourses[] = $exported;
             }
 
             if (empty($courses)) {
@@ -51,9 +57,14 @@ class catalogue implements renderable, templatable {
             ];
         }
 
+        $totalcourses = count($allcourses);
+
         return [
             'categories' => $categories,
-            'hascategories' => !empty($categories),
+            'courses' => $allcourses,
+            'hascourses' => $totalcourses > 0,
+            'totalcourses' => $totalcourses,
+            'flatlayout' => $totalcourses > 0 && $totalcourses < self::FLAT_LAYOUT_THRESHOLD,
         ];
     }
 
@@ -84,15 +95,45 @@ class catalogue implements renderable, templatable {
             );
         }
 
+        $niveau = $this->get_niveau($course->id);
+
         return [
             'fullname' => $course->get_formatted_name(),
             'summary'  => $summary,
             'image'    => $image,
             'hasimage' => (bool) $image,
             'hidden'   => $hidden,
+            'niveau'   => $niveau,
+            'hasniveau' => $niveau !== null,
             'infourl' => (new moodle_url('/local/rofeo/course.php', ['id' => $course->id]))->out(false),
             // 'infourl'  => (new moodle_url('/course/info.php', ['id' => $course->id]))->out(false),
             'enrolurl' => (new moodle_url('/enrol/index.php', ['id' => $course->id]))->out(false),
         ];
+    }
+
+    /**
+     * Read the course's "niveau" custom field, if set.
+     *
+     * Filters the generic customfield export by shortname rather than assuming
+     * a fixed set of configured option values, since those are admin-editable
+     * through the course custom fields UI.
+     */
+    private function get_niveau(int $courseid): ?string {
+        $handler = \core_course\customfield\course_handler::create();
+
+        foreach ($handler->export_instance_data($courseid, true) as $data) {
+            if ($data->get_field()->get('shortname') !== 'niveau') {
+                continue;
+            }
+
+            $value = $data->get_value();
+            if ($value === '' || $value === null || $value === '-') {
+                return null;
+            }
+
+            return format_string($value);
+        }
+
+        return null;
     }
 }

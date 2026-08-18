@@ -20,8 +20,12 @@ $string['heroimage_desc'] = 'Image affichée en arrière-plan de la bannière. F
 $string['catalogueheading'] = 'Catalogue des formations';
 $string['cataloguetitle'] = 'Titre du catalogue';
 $string['cataloguetitle_desc'] = 'Titre affiché au-dessus du catalogue sur la page d\'accueil.';
+$string['cataloguesubtitle'] = 'Sous-titre du catalogue';
+$string['cataloguesubtitle_desc'] = 'Texte affiché sous le titre du catalogue.';
 $string['coursectalabel'] = 'Libellé du bouton des formations';
 $string['coursectalabel_desc'] = 'Texte du bouton sous chaque carte de formation.';
+$string['catalogueempty'] = 'Message catalogue vide';
+$string['catalogueempty_desc'] = 'Message affiché lorsqu\'aucune formation n\'est disponible.';
 
 $string['footerwebsite'] = 'Site web';
 

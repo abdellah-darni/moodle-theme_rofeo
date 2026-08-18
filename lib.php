@@ -34,7 +34,9 @@ function theme_rofeo_frontpage_defaults(): array {
         'heroctalabel'   => 'Voir les formations',
         'heroctaurl'     => '#catalogue',
         'cataloguetitle' => 'Catalogue des formations',
+        'cataloguesubtitle' => 'Des parcours conçus par des experts pour transformer votre curiosité en compétences tangibles.',
         'coursectalabel' => 'Voir la formations',
+        'catalogueempty' => 'Le catalogue sera bientôt disponible.',
     ];
 }
 

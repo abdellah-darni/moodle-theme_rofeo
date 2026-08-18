@@ -53,5 +53,7 @@ if ($ADMIN->fulltree) {
     ));
 
     $addfield('cataloguetitle');
+    $addfield('cataloguesubtitle', 'textarea');
     $addfield('coursectalabel');
+    $addfield('catalogueempty', 'textarea');
 }
