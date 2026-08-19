@@ -9,6 +9,12 @@
     reference written in full inside the comment text closes the comment
     early and turns the rest of this block into literal page output.
 
+    The section id is "rofeo-faq", not "faq" - moove ships its own #faq
+    accordion styling in scss/moove/_frontpage.scss, scoped to logged-out
+    visitors (#page-site-index.notloggedin #faq ...), which silently wins
+    against this theme's accordion overrides by specificity when the id
+    collides. Keep this id theme-owned.
+
     Context variables required for this template:
     * faqenabled - true only when the admin has enabled the section AND at
       least one question/answer pair has content, supplied by
@@ -17,7 +23,7 @@
     * faqitems - array of id, question, answer, active
 }}
 {{#faqenabled}}
-    <section class="rofeo-faq" id="faq">
+    <section class="rofeo-faq" id="rofeo-faq">
         <div class="rofeo-faq__inner">
             <h2 class="rofeo-faq__heading">{{{ faqtitle }}}</h2>
             {{#faqsubtitle}}
