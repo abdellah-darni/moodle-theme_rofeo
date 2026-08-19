@@ -17,14 +17,6 @@ $rofeo-gold: #caa53d;
     align-items: center;
     min-height: clamp(26rem, 70vh, 34rem);
     overflow: hidden;
-    // theme_rofeo's frontpage.mustache places .rofeo-hero directly under
-    // #page.drawers, as a sibling of #page-content - it never sits inside
-    // .main-inner, so the only ancestor padding to cancel is #page.drawers's
-    // own `padding: 0 15px` (theme_moove/scss/moove/_drawers.scss:7).
-    // -0.95rem was already the only value this ever rendered with (the
-    // var(--rofeo-page-pad, ...) was never actually set anywhere, so the
-    // fallback always won); written as a literal now since the indirection
-    // implied a knob that didn't exist. Same value, so no visual change.
     margin-inline: -0.95rem;
 
     &__bg {
@@ -342,17 +334,6 @@ $rofeo-gold: #caa53d;
 }
 
 .rofeo-detail {
-
-    // Unlike .rofeo-hero, this renders through the normal drawers.mustache
-    // path (course.php has no frontpage-style override), so it sits inside
-    // #page.drawers > #page-content.main-inner > #region-main - two nested
-    // padding layers, not one. Cancels both directly:
-    // #page.drawers padding: 0 15px  (theme_moove/scss/moove/_drawers.scss:7)
-    // .main-inner padding: 1.5rem    (theme_moove/scss/moove/_drawers.scss:13)
-    // This couples the band to those two values; if moove changes them this
-    // will need updating too. A viewport-relative technique would avoid that
-    // coupling, but I can't verify it against the live site right now, so
-    // this sticks to values read directly from moove's own source.
     &__hero {
         position: relative;
         overflow: hidden;
@@ -369,9 +350,6 @@ $rofeo-gold: #caa53d;
         object-fit: cover;
     }
 
-    // Heavy, uniform tint (not a directional fade like .rofeo-hero__scrim):
-    // the course image should read as texture, not as a subject, regardless
-    // of how well it's cropped.
     &__hero-tint {
         position: absolute;
         inset: 0;
@@ -476,12 +454,6 @@ $rofeo-gold: #caa53d;
     display: none;
 }
 
-// Moove forces #page's background white for logged-out visitors only:
-//   #page-site-index.notloggedin #page { background-color: var(--moove-bg-white) !important; }
-//   (theme_moove/scss/moove/_frontpage.scss:23-25)
-// Invisible today because both login states render white. If you ever set a
-// non-white page background, you must also override that exact selector with
-// !important, or the logged-out front page will silently stay white.
 .pagelayout-frontpage {
 
     #page-content.main-inner {
