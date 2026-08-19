@@ -44,16 +44,18 @@
             {{/hasfootersocial}}
         </div>
 
-        <div class="rofeo-footer__copyright">
-            &copy; {{ copyrightyear }} {{ sitename }}. {{#str}}allrightsreserved, theme_rofeo{{/str}}
-        </div>
+        <div class="rofeo-footer__bottom">
+            <div class="rofeo-footer__copyright">
+                &copy; {{ copyrightyear }} {{ sitename }}. {{#str}}allrightsreserved, theme_rofeo{{/str}}
+            </div>
 
-        <div class="rofeo-footer__meta">
-            {{# output.supportemail }}
-                <div class="supportemail">{{{ output.supportemail }}}</div>
-            {{/ output.supportemail }}
-            {{{ output.standard_footer_html }}}
-            <div class="tool_usertours-resettourcontainer"></div>
+            <div class="rofeo-footer__meta">
+                {{# output.supportemail }}
+                    <div class="supportemail">{{{ output.supportemail }}}</div>
+                {{/ output.supportemail }}
+                {{{ output.standard_footer_html }}}
+                <div class="tool_usertours-resettourcontainer"></div>
+            </div>
         </div>
 
     </div>

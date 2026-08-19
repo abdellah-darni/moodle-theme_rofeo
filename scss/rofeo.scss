@@ -301,6 +301,18 @@ $rofeo-gold: #caa53d;
         text-align: center;
     }
 
+    &__accordion {
+        --bs-accordion-bg: #fff;
+        --bs-accordion-active-bg: #fff;
+        --bs-accordion-color: #{$gray-900};
+        --bs-accordion-btn-color: #{$gray-900};
+        --bs-accordion-active-color: #{$gray-900};
+        --bs-accordion-border-color: #{$gray-200};
+        --bs-accordion-border-radius: 0.75rem;
+        --bs-accordion-inner-border-radius: 0.75rem;
+        --bs-accordion-btn-focus-box-shadow: none;
+    }
+
     &__item {
         border: 1px solid $gray-200;
         border-radius: 0.75rem;
@@ -313,16 +325,6 @@ $rofeo-gold: #caa53d;
     &__item .accordion-button {
         font-weight: 600;
         font-size: 1rem;
-
-        &:not(.collapsed) {
-            color: $primary;
-            background-color: $gray-100;
-        }
-
-        &:focus {
-            box-shadow: none;
-            border-color: $gray-200;
-        }
     }
 
     &__item .accordion-body {
@@ -444,12 +446,12 @@ $rofeo-gold: #caa53d;
         display: flex;
         flex-wrap: wrap;
         gap: 1.5rem;
-        padding: 2.5rem 1.5rem 0;
+        padding: 1.75rem 1.5rem 0;
     }
 
     &__brand {
         flex: 1 1 16rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1.25rem;
     }
 
     &__name { font-weight: 600; margin-bottom: 0.5rem; font-size: 1.125rem; }
@@ -464,8 +466,8 @@ $rofeo-gold: #caa53d;
         flex: 1 1 16rem;
         display: flex;
         flex-direction: column;
-        gap: 0.75rem;
-        margin-bottom: 2rem;
+        gap: 0.5rem;
+        margin-bottom: 1.25rem;
 
         @include media-breakpoint-up(md) { align-items: flex-end; text-align: right; }
     }
@@ -484,22 +486,17 @@ $rofeo-gold: #caa53d;
 
     &__social a { font-size: 1.25rem; }
 
-    &__copyright {
+    &__bottom {
         width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem 1.5rem;
         border-top: 1px solid rgba(255, 255, 255, 0.15);
-        padding: 1.25rem 0;
+        padding: 1rem 0;
         font-size: 0.8125rem;
         opacity: 0.7;
-    }
-
-    &__meta {
-        width: 100%;
-        font-size: 0.875rem;
-        opacity: 0.8;
-        padding-bottom: 1.5rem;
-        text-align: right;
-
-        @include media-breakpoint-down(md) { text-align: left; }
     }
 
     &#page-footer {
