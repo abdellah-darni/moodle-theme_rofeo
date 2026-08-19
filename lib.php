@@ -35,7 +35,7 @@ function theme_rofeo_frontpage_defaults(): array {
         'heroctaurl'     => '#catalogue',
         'cataloguetitle' => 'Catalogue des formations',
         'cataloguesubtitle' => 'Des parcours conçus par des experts pour transformer votre curiosité en compétences tangibles.',
-        'coursectalabel' => 'Voir la formations',
+        'coursectalabel' => 'Voir la formation',
         'catalogueempty' => 'Le catalogue sera bientôt disponible.',
         'whyenabled'  => 1,
         'whytitle'    => 'Pourquoi choisir ROFEO ?',
