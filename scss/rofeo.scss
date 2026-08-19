@@ -360,7 +360,7 @@ $rofeo-gold: #caa53d;
         @extend %rofeo-container;
         position: relative;
         z-index: 1;
-        padding: 3.5rem 1.5rem;
+        padding: 3.5rem 1.5rem 6rem;
     }
 
     &__category {
@@ -393,15 +393,19 @@ $rofeo-gold: #caa53d;
 
     &__body {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) 20rem;
+        grid-template-columns: minmax(0, 1fr) 24rem;
         gap: 3rem;
         align-items: start;
-        padding: 2rem 0 4rem;
+        padding: 0 0 4rem;
 
         @include media-breakpoint-down(lg) {
             grid-template-columns: 1fr;
             gap: 2rem;
         }
+    }
+
+    &__main {
+        padding-top: 2rem;
     }
 
     &__section { margin-top: 2.5rem; }
@@ -421,20 +425,28 @@ $rofeo-gold: #caa53d;
     &__side {
         position: sticky;
         top: 6rem;
+        margin-top: -5rem;
         border: 1px solid $gray-200;
         border-radius: 0.75rem;
-        padding: 1.25rem;
         background: #fff;
+        overflow: hidden;
+        z-index: 1;
 
-        @include media-breakpoint-down(lg) { position: static; }
+        @include media-breakpoint-down(lg) {
+            position: static;
+            margin-top: 1.5rem;
+        }
+    }
+
+    &__side-body {
+        padding: 1.25rem;
     }
 
     &__img {
         width: 100%;
         aspect-ratio: 16 / 9;
         object-fit: cover;
-        border-radius: 0.5rem;
-        margin-bottom: 1.25rem;
+        display: block;
     }
 
     &__meta {
