@@ -396,6 +396,8 @@ $rofeo-gold: #caa53d;
         grid-template-columns: minmax(0, 1fr) 24rem;
         gap: 3rem;
         align-items: start;
+        max-width: calc(68ch + 3rem + 24rem);
+        margin-inline: auto;
         padding: 0 0 4rem;
 
         @include media-breakpoint-down(lg) {
