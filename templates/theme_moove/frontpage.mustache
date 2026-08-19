@@ -31,6 +31,16 @@
         theme_moove\util\settings::frontpage() is no longer used here at all
         (its footer() call is separate and still is)
       - carousel JS removed (no slider markup left to initialise)
+      - #topofscroll renamed to #rofeo-topofscroll: moove scopes ~190 lines
+        of styling (scss/moove/_frontpage.scss) to #page-site-index.notloggedin,
+        including #topofscroll and its #page-content/#region-main children.
+        Since this fork removed moove's !isloggedin() gate, that block would
+        otherwise apply only when logged out. Not referenced by any core or
+        moove JS - safe to rename. #faq was renamed to #rofeo-faq for the
+        same reason in an earlier pass. #page (the outer drawers wrapper) has
+        the same collision but is NOT renamed: theme_boost/amd/src/drawers.js
+        and sticky-footer.js depend on that literal id, and moove's rule uses
+        !important, so no selector-only fix is possible - see docs/PROGRESS.md.
 
     Context variables required for this template:
     * output - The core renderer for the page
@@ -75,7 +85,7 @@
 
         {{> theme_rofeo/catalogue }}
 
-        <div id="topofscroll">
+        <div id="rofeo-topofscroll">
             <div id="page-content" class="d-print-block main-inner">
                 <div id="region-main-box">
                     <section id="region-main" aria-label="{{#str}}content{{/str}}">

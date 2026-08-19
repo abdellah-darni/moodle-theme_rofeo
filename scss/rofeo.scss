@@ -417,6 +417,12 @@ $rofeo-gold: #caa53d;
     display: none;
 }
 
+// Moove forces #page's background white for logged-out visitors only:
+//   #page-site-index.notloggedin #page { background-color: var(--moove-bg-white) !important; }
+//   (theme_moove/scss/moove/_frontpage.scss:23-25)
+// Invisible today because both login states render white. If you ever set a
+// non-white page background, you must also override that exact selector with
+// !important, or the logged-out front page will silently stay white.
 .pagelayout-frontpage {
 
     #page-content.main-inner {
