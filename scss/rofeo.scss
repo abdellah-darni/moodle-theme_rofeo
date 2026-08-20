@@ -594,3 +594,119 @@ $rofeo-gold: #caa53d;
 }
 
 #catalogue { scroll-margin-top: 5rem; }
+
+.rofeoparent-children {
+    display: flex;
+    flex-direction: column;
+}
+
+.rofeoparent-child {
+    &:not(:last-child) {
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid $gray-200;
+    }
+}
+
+.rofeoparent-child-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $gray-900;
+    margin: 0 0 0.75rem;
+}
+
+.rofeoparent-courses {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.rofeoparent-course {
+    background: #fff;
+    border: 1px solid $gray-200;
+    border-radius: 0.75rem;
+    padding: 1rem;
+}
+
+.rofeoparent-course-name {
+    font-weight: 600;
+    font-size: 0.9375rem;
+    margin-bottom: 0.5rem;
+}
+
+.rofeoparent-course-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+.rofeoparent-progress {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.rofeoparent-progress-bar {
+    position: relative;
+    width: 6rem;
+    height: 0.5rem;
+    border-radius: 999px;
+    background: $gray-200;
+    overflow: hidden;
+
+    &::after {
+        content: '';
+        display: block;
+        height: 100%;
+        width: calc(var(--progress, 0) * 1%);
+        background: $rofeo-gold;
+        border-radius: 999px;
+    }
+}
+
+.rofeoparent-progress-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: $gray-700;
+    white-space: nowrap;
+}
+
+.rofeoparent-grade {
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+}
+
+.rofeoparent-grade-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: $gray-600;
+}
+
+.rofeoparent-grade-value {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: $rofeo-ink;
+}
+
+.rofeoparent-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.rofeoparent-link {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: $primary;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        color: $primary;
+        text-decoration: underline;
+    }
+}
