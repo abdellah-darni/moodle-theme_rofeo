@@ -11,6 +11,10 @@ $rofeo-gold: #caa53d;
     }
 }
 
+body.pagelayout-login #page .login-layout-left-content {
+    display: none;
+}
+
 .rofeo-hero {
     position: relative;
     display: flex;
