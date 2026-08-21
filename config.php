@@ -23,7 +23,6 @@ $THEME->scss = function($theme) {
     return theme_rofeo_get_main_scss_content($theme);
 };
 $THEME->prescsscallback  = 'theme_rofeo_get_pre_scss';
-$THEME->extrascsscallback = 'theme_rofeo_get_extra_scss';
 
 $THEME->layouts = [
     'base' => [
