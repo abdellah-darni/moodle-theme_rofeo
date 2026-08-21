@@ -15,6 +15,10 @@ body.pagelayout-login #page .login-layout-left-content {
     display: none;
 }
 
+body.pagelayout-login #page .login-layout-left::after {
+    display: none !important;
+}
+
 .rofeo-hero {
     position: relative;
     display: flex;
